@@ -3,18 +3,17 @@
 tidyData<- function() {
  
   
-  trainData <- read.table("./train/X_train.txt", header = FALSE, sep = "")
+  trainData <- read.table("./train/X_train.txt", header = FALSE, sep = "")  #reads train data
  
-  measures <- readLines("./features.txt")
+  measures <- readLines("./features.txt")  #reads features as measures
  
-  colnames(trainData) <- measures
+  colnames(trainData) <- measures  #names dataframe columns using the measures given
  
-  trainActivities <- readLines("./train/y_train.txt")
+  trainActivities <- readLines("./train/y_train.txt")  #reading the train activities
  
-  trainSubjects <-readLines("./train/subject_train.txt")
+  trainSubjects <-readLines("./train/subject_train.txt")  #dataframes with the subjects who participated in the train portion
  
- 
-  trainData <- mutate(trainData, subject = trainSubjects, activity = trainActivities)
+  trainData <- mutate(trainData, subject = trainSubjects, activity = trainActivities)  #combining the data from the above lines of code
  
   
   testData <- read.table("./test/X_test.txt", header = FALSE, sep = "")
