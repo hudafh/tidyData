@@ -1,5 +1,19 @@
 # README
 
+The script works as follows:
+
+1. It reads the file with the data from the train portion of the experiment into a variable called trainData
+2. Read file with the measures of that data, i.e., the names of the columns where the above data falls on
+3. Name the columns in trainData with the measures read in the previous step
+4. Read the Activities(walking, sitting, etc...), located in .../train/y_train, performed in the Train portion of the experiment
+5. Read the subjects, located in .../train/subject_train.txt, involved the train portion of the experiment
+6. Mutate the trainData table(the one with the data from the Train portion of the experiment), to include the subjects and the activities ( a column for the subjects and one for the activities)
+7. Do steps 1-6 for the Test portion of the data, resulting in a dataframe named testData, with the same number of columns and column names as trainData
+8. Join trainData and testData, resulting in a dataframe called jointData
+9. 
+
+
+
 tidyData<- function() {
  
   
